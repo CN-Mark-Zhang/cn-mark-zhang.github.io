@@ -1,0 +1,42 @@
+第一步：下载所需文件
+针对macOS：https://kgithub.com/MatsuriDayo/nekoray/releases/download/2.6/nekoray-2.6-2022-11-27-macos-amd64.dmg
+
+第二步：加载配置文件
+打开nekoray，点击“服务器”
+选择“手动输入配置”
+类型选择“Hysteria”，然后将下方配置替换掉原有配置：
+
+{
+"server": "mkztecdemo.ml:6275",
+"protocol": "wechat-video",
+"up_mbps": 200,
+"down_mbps": 200,
+"socks5": {
+"listen": "127.0.0.1:%socks_port%",
+"timeout": 300,
+"disable_udp": false
+},
+"alpn": "h3",
+"auth_str": "d798de4e-1e18-43ff-8d79-a6729a22e95e",
+"server_name": "mkztecdemo.ml",
+"insecure": false,
+"recv_window_conn": 11534336,
+"recv_window": 46137344,
+"disable_mtu_discovery": true,
+"resolver": "https://doh.pub/dns-query",
+"retry": 3,
+"retry_interval": 3,
+"quit_on_disconnect": false,
+"handshake_timeout": 15,
+"idle_timeout": 30
+}
+
+第三步：导入核心文件
+针对macOS(ARM)：https://kgithub.com/apernet/hysteria/releases/download/v1.3.1/hysteria-darwin-arm64
+在Nekoray中，点击首选项-基本设置-核心-选择（Hysteria），并选中刚才下载的核心文件
+点击“确定”回到主界面
+
+第四步：启动代理
+勾选主界面工具栏中的“系统代理”
+选中Hysteria配置并单击回车键
+进入google.com测试连接
